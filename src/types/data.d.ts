@@ -27,5 +27,5 @@ export interface TranslationFile {
 }
 
 export interface SectionRefs {
-     [key: string]: RefObject<HTMLElement>;
-   }
+    [key: string]: RefObject<HTMLElement>;
+}

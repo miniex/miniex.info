@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
     type ProjectTranslation,
     type CareerTranslation,
-    type SectionRefs
+    type SectionRefs,
 } from "@/types/data";
 
 const LanguageSelector: React.FC = () => {
@@ -40,7 +40,12 @@ const Header: React.FC<{
                 {["intro", "ongoing", "completed", "career"].map((section) => (
                     <button
                         key={section}
-                    onClick={() => scrollToSection(sectionRefs[section as keyof SectionRefs])}>
+                        onClick={() =>
+                            scrollToSection(
+                                sectionRefs[section as keyof SectionRefs],
+                            )
+                        }
+                    >
                         {t(section)}
                     </button>
                 ))}
@@ -51,7 +56,7 @@ const Header: React.FC<{
 
 const Project: React.FC<{
     project: ProjectTranslation;
-}> = ({ project}) => {
+}> = ({ project }) => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -147,9 +152,9 @@ const App: React.FC = () => {
             >
                 <h2>{t("ongoing")}</h2>
                 <div className="project-container">
-{ongoingProjects.map((project, index) => (
-    <Project key={index} project={project} />
-))}
+                    {ongoingProjects.map((project, index) => (
+                        <Project key={index} project={project} />
+                    ))}
                 </div>
             </section>
 
@@ -159,9 +164,9 @@ const App: React.FC = () => {
             >
                 <h2>{t("completed")}</h2>
                 <div className="project-container">
-{completedProjects.map((project, index) => (
-    <Project key={index} project={project} />
-))}
+                    {completedProjects.map((project, index) => (
+                        <Project key={index} project={project} />
+                    ))}
                 </div>
             </section>
 
