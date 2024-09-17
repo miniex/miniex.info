@@ -38,7 +38,7 @@ serve({
             return new Response("Not Found", { status: 404 });
         }
     },
-    port: 3000,
+    port: 80,
 });
 
-console.log("Server running on http://localhost:3000");
+console.log("Server running on http://localhost:80");
