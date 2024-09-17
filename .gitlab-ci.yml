@@ -1,0 +1,42 @@
+stages:
+  - archive
+
+archive_to_github:
+  stage: archive
+  only:
+    - main
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval $(ssh-agent -s)
+    - echo "$GITHUB_SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - git config --global user.email "miniex@daminstudio.net"
+    - git config --global user.name "miniex"
+  script:
+    - git clone --mirror $CI_REPOSITORY_URL repo
+    - cd repo
+    - git push -f --mirror git@github.com:miniex/miniex.info.git
+#
+# deploy_to_dms-ax:
+#   stage: deploy
+#   only:
+#     - main
+#   before_script:
+#     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+#     - eval $(ssh-agent -s)
+#
+#     - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+#
+#     - mkdir -p ~/.ssh
+#     - chmod 700 ~/.ssh
+#     
+#     - ssh-keyscan -p 2023 $SERVER_IP >> ~/.ssh/known_hosts 2>&1
+#     - chmod 644 ~/.ssh/known_hosts
+#   script:
+#     - scp -P 2023 scripts/deploy.sh $SERVER_USER@$SERVER_IP:/tmp/deploy.sh
+#     - ssh -p 2023 $SERVER_USER@$SERVER_IP 'bash /tmp/deploy.sh'
+#     - ssh -p 2023 $SERVER_USER@$SERVER_IP 'rm -f /tmp/deploy.sh'
+#
