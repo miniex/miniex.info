@@ -184,7 +184,7 @@ const App: React.FC = () => {
             </section>
 
             <footer className="footer">
-                <p>© 2023 My Portfolio. All rights reserved.</p>
+                <p>Copyright © 2024 - All rights reserved by Han Damin</p>
             </footer>
         </div>
     );
