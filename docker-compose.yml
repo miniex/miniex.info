@@ -1,5 +1,5 @@
 services:
-  m0001-blog:
+  m0001-info:
     build:
        context: .
        dockerfile: Dockerfile
