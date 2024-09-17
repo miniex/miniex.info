@@ -1,0 +1,30 @@
+services:
+  m0000-blog:
+    build:
+       context: .
+       dockerfile: Dockerfile
+    container_name: "m0001-info"
+
+    restart: always
+
+    ports:
+      - "5173:80"
+
+    volumes:
+      - ./assets:/app/assets
+      - ./templates:/app/templates
+      - ./contents:/app/contents
+
+    environment:
+      - RUST_LOG=info
+      - RUST_BACKTRACE=1
+
+    command: ["./blog"]
+
+    networks:
+      - reverse_proxy 
+
+networks:
+  reverse_proxy:
+    name: "n0000-reverse_proxy"
+    external: true
