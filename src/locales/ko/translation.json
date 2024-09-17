@@ -1,13 +1,13 @@
 {
-    "intro": "",
-    "ongoing": "",
-    "completed": "",
-    "career": "",
-    "welcome": "",
+    "intro": "소개",
+    "ongoing": "작업 및 고도화중인 프로젝트",
+    "completed": "완료한 프로젝트",
+    "career": "경력",
+    "welcome": "한다민",
     "description": "",
     "viewProjects": "",
-    "projectDetails": "",
-    "close": "",
+    "projectDetails": "자세히 보기",
+    "close": "닫기",
     "ongoingProjects": [
         {
             "title": "",

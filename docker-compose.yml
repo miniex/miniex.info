@@ -1,5 +1,5 @@
 services:
-  m0000-blog:
+  m0001-blog:
     build:
        context: .
        dockerfile: Dockerfile
@@ -8,9 +8,7 @@ services:
     restart: always
 
     ports:
-      - "5173:80"
-
-    volumes:
+      - "3000:80"
 
     networks:
       - reverse_proxy 

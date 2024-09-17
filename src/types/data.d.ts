@@ -1,16 +1,16 @@
-interface ProjectTranslation {
+export interface ProjectTranslation {
     title: string;
     description: string;
     details: string[];
 }
 
-interface CareerTranslation {
+export interface CareerTranslation {
     title: string;
     period: string;
     description: string;
 }
 
-interface TranslationFile {
+export interface TranslationFile {
     intro: string;
     ongoing: string;
     completed: string;
@@ -25,3 +25,7 @@ interface TranslationFile {
     completedProjects: ProjectTranslation[];
     careers: CareerTranslation[];
 }
+
+export interface SectionRefs {
+     [key: string]: RefObject<HTMLElement>;
+   }

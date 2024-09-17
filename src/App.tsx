@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 
 import {
-    ProjectTranslation,
-    TimelineItemTranslation,
-    CareerTranslation,
-} from "@/type/data";
+    type ProjectTranslation,
+    type CareerTranslation,
+    type SectionRefs
+} from "@/types/data";
 
 const LanguageSelector: React.FC = () => {
     const { i18n } = useTranslation();
@@ -40,8 +40,7 @@ const Header: React.FC<{
                 {["intro", "ongoing", "completed", "career"].map((section) => (
                     <button
                         key={section}
-                        onClick={() => scrollToSection(sectionRefs[section])}
-                    >
+                    onClick={() => scrollToSection(sectionRefs[section as keyof SectionRefs])}>
                         {t(section)}
                     </button>
                 ))}
@@ -52,8 +51,7 @@ const Header: React.FC<{
 
 const Project: React.FC<{
     project: ProjectTranslation;
-    type: "ongoing" | "completed";
-}> = ({ project, type }) => {
+}> = ({ project}) => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -109,7 +107,7 @@ const TimelineItem: React.FC<{ career: CareerTranslation }> = ({ career }) => {
     );
 };
 
-const sectionRefs = {
+const sectionRefs: SectionRefs = {
     intro: React.createRef<HTMLElement>(),
     ongoing: React.createRef<HTMLElement>(),
     completed: React.createRef<HTMLElement>(),
@@ -149,9 +147,9 @@ const App: React.FC = () => {
             >
                 <h2>{t("ongoing")}</h2>
                 <div className="project-container">
-                    {ongoingProjects.map((project, index) => (
-                        <Project key={index} project={project} type="ongoing" />
-                    ))}
+{ongoingProjects.map((project, index) => (
+    <Project key={index} project={project} />
+))}
                 </div>
             </section>
 
@@ -161,13 +159,9 @@ const App: React.FC = () => {
             >
                 <h2>{t("completed")}</h2>
                 <div className="project-container">
-                    {completedProjects.map((project, index) => (
-                        <Project
-                            key={index}
-                            project={project}
-                            type="completed"
-                        />
-                    ))}
+{completedProjects.map((project, index) => (
+    <Project key={index} project={project} />
+))}
                 </div>
             </section>
 
