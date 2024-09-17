@@ -1,0 +1,32 @@
+{
+    "intro": "",
+    "ongoing": "",
+    "completed": "",
+    "career": "",
+    "welcome": "",
+    "description": "",
+    "viewProjects": "",
+    "projectDetails": "",
+    "close": "",
+    "ongoingProjects": [
+        {
+            "title": "",
+            "description": "",
+            "details": [""]
+        }
+    ],
+    "completedProjects": [
+        {
+            "title": "",
+            "description": "",
+            "details": [""]
+        }
+    ],
+    "careers": [
+        {
+            "title": "",
+            "period": "",
+            "description": ""
+        }
+    ]
+}

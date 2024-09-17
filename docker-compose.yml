@@ -11,15 +11,6 @@ services:
       - "5173:80"
 
     volumes:
-      - ./assets:/app/assets
-      - ./templates:/app/templates
-      - ./contents:/app/contents
-
-    environment:
-      - RUST_LOG=info
-      - RUST_BACKTRACE=1
-
-    command: ["./blog"]
 
     networks:
       - reverse_proxy 
