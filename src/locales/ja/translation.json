@@ -1,21 +1,21 @@
 {
-    "intro": "소개",
-    "ongoing": "진행 중인 프로젝트",
-    "completed": "완료한 프로젝트",
-    "career": "경력",
-    "life": "타임라인",
-    "skills": "기술 스택",
-    "welcome": "한다민",
-    "description": "안녕하세요, 자유를 추구하는 개발자 한다민입니다.",
+    "intro": "紹介",
+    "ongoing": "進行中のプロジェクト",
+    "completed": "完了したプロジェクト",
+    "career": "経歴",
+    "life": "タイムライン",
+    "skills": "技術スタック",
+    "welcome": "ハン・ダミン",
+    "description": "こんにちは、自由を追求する開発者のハン・ダミンです。",
     "ongoingProjects": [
         {
             "title": "maidenX",
-            "description": "학습 목적과 AI 엔진 구축을 위해 설계된, 'Maiden Engine'을 위한 Rust 기반 머신러닝 프레임워크",
+            "description": "学習目的とAIエンジン構築のために設計された、'Maiden Engine'のためのRustベースの機械学習フレームワーク",
             "details": [
-                "Rust를 사용한 성능과 효율에 초점을 둔 프레임워크",
-               "CUDA 지원",
-                "Vulkan & Metal, DirectX 지원 예정",
-                "pytorch와 유사한 구조"
+                "Rustを使用したパフォーマンスと効率性に焦点を当てたフレームワーク",
+                "CUDAサポート",
+                "Vulkan & Metal、DirectXサポート予定",
+                "pytorchと類似した構造"
             ],
             "technologies": ["rust", "CUDA", "ML", "pytorch"],
             "links": {
@@ -24,7 +24,7 @@
         },
         {
             "title": "bevy advanced decorum",
-            "description": "Tauri-plugin-decorum에서 영감을 받은, Bevy 엔진을 위한 고도로 커스터마이징 가능한 윈도우 데코레이션 플러그인",
+            "description": "Tauri-plugin-decorumからインスピレーションを受けた、Bevyエンジンのための高度にカスタマイズ可能なウィンドウ装飾プラグイン",
             "details": [
                 "obj-c"
             ],
@@ -34,10 +34,9 @@
             }
         },
         {
-            "title": "bevy 오픈소스 기여",
-            "description": "rust기반 오픈소스 게임엔진인 bevy 기여",
-            "details": [
-            ],
+            "title": "bevyオープンソース貢献",
+            "description": "Rustベースのオープンソースゲームエンジンbevyへの貢献",
+            "details": [],
             "technologies": ["rust", "bevy"],
             "links": {
                 "github": "https://github.com/miniex/bevy"
@@ -46,8 +45,8 @@
     ],
     "completedProjects": [
         {
-            "title": "개인 블로그",
-            "description": "rust와 html을 이용한 정적 블로그",
+            "title": "個人ブログ",
+            "description": "RustとHTMLを使用した静的ブログ",
             "details": [],
             "technologies": ["rust", "css", "js", "html"],
             "links": {
@@ -55,8 +54,8 @@
             }
         },
         {
-            "title": "개인 포트폴리오 사이트",
-            "description": "react와 vite를 이용한 포트폴리오 사이트",
+            "title": "個人ポートフォリオサイト",
+            "description": "ReactとViteを使用したポートフォリオサイト",
             "details": [],
             "technologies": ["react", "vite", "scss", "tailwindcss", "framer-motion", "threejs"],
             "links": {
@@ -70,7 +69,7 @@
     ],
     "techStack": [
         {
-            "category": "Languages",
+            "category": "プログラミング言語",
             "technologies": [
                 { "name": "C", "level": 4 },
                 { "name": "C++", "level": 4 },
@@ -82,7 +81,7 @@
             ]
         },
         {
-            "category": "Tools & Frameworks",
+            "category": "ツール＆フレームワーク",
             "technologies": [
                 { "name": "NPM", "level": 4 },
                 { "name": "Yarn", "level": 4 },
@@ -99,7 +98,7 @@
             ]
         },
         {
-            "category": "Databases",
+            "category": "データベース",
             "technologies": [
                 { "name": "MySQL", "level": 4 },
                 { "name": "MariaDB", "level": 4 },
@@ -110,12 +109,11 @@
             ]
         },
         {
-            "category": "DevOps & Deployment",
+            "category": "DevOps＆デプロイメント",
             "technologies": [
                 { "name": "Docker", "level": 4 },
                 { "name": "Nginx", "level": 4 }
             ]
         }
     ]
-    
 }

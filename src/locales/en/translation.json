@@ -1,32 +1,119 @@
 {
-    "intro": "",
-    "ongoing": "",
-    "completed": "",
-    "career": "",
-    "welcome": "",
-    "description": "",
-    "viewProjects": "",
-    "projectDetails": "",
-    "close": "",
+    "intro": "Introduction",
+    "ongoing": "Ongoing Projects",
+    "completed": "Completed Projects",
+    "career": "Career",
+    "life": "Timeline",
+    "skills": "Tech Stack",
+    "welcome": "Han Damin",
+    "description": "Hello, I'm Han Damin, a developer pursuing freedom.",
     "ongoingProjects": [
         {
-            "title": "",
-            "description": "",
-            "details": [""]
+            "title": "maidenX",
+            "description": "A Rust-based machine learning framework designed for learning purposes and AI engine construction, for 'Maiden Engine'",
+            "details": [
+                "Framework focused on performance and efficiency using Rust",
+                "CUDA support",
+                "Vulkan & Metal, DirectX support planned",
+                "Similar structure to pytorch"
+            ],
+            "technologies": ["rust", "CUDA", "ML", "pytorch"],
+            "links": {
+                "github": "https://github.com/miniex/maidenx"
+            }
+        },
+        {
+            "title": "bevy advanced decorum",
+            "description": "A highly customizable window decoration plugin for the Bevy engine, inspired by Tauri-plugin-decorum",
+            "details": [
+                "obj-c"
+            ],
+            "technologies": ["rust", "obj-c"],
+            "links": {
+                "github": "https://github.com/miniex/bevy_advanced_decorum"
+            }
+        },
+        {
+            "title": "bevy open source contributions",
+            "description": "Contributions to bevy, a Rust-based open source game engine",
+            "details": [],
+            "technologies": ["rust", "bevy"],
+            "links": {
+                "github": "https://github.com/miniex/bevy"
+            }
         }
     ],
     "completedProjects": [
         {
-            "title": "",
-            "description": "",
-            "details": [""]
+            "title": "Personal Blog",
+            "description": "Static blog using Rust and HTML",
+            "details": [],
+            "technologies": ["rust", "css", "js", "html"],
+            "links": {
+                "github": "https://github.com/miniex/miniex.blog"
+            }
+        },
+        {
+            "title": "Personal Portfolio Site",
+            "description": "Portfolio site using React and Vite",
+            "details": [],
+            "technologies": ["react", "vite", "scss", "tailwindcss", "framer-motion", "threejs"],
+            "links": {
+                "github": "https://github.com/miniex/miniex.info"
+            }
         }
     ],
     "careers": [
+    ],
+    "lifeEvents": [
+    ],
+    "techStack": [
         {
-            "title": "",
-            "period": "",
-            "description": ""
+            "category": "Languages",
+            "technologies": [
+                { "name": "C", "level": 4 },
+                { "name": "C++", "level": 4 },
+                { "name": "JavaScript", "level": 5 },
+                { "name": "TypeScript", "level": 5 },
+                { "name": "Python", "level": 4 },
+                { "name": "Rust", "level": 4 },
+                { "name": "CUDA", "level": 3 }
+            ]
+        },
+        {
+            "category": "Tools & Frameworks",
+            "technologies": [
+                { "name": "NPM", "level": 4 },
+                { "name": "Yarn", "level": 4 },
+                { "name": "PNPM", "level": 4 },
+                { "name": "Bun", "level": 3 },
+                { "name": "Svelte", "level": 4 },
+                { "name": "Vite", "level": 4 },
+                { "name": "React", "level": 5 },
+                { "name": "Next.js", "level": 5 },
+                { "name": "Tauri", "level": 4 },
+                { "name": "Git", "level": 4 },
+                { "name": "TailwindCSS", "level": 5 },
+                { "name": "SASS", "level": 4 }
+            ]
+        },
+        {
+            "category": "Databases",
+            "technologies": [
+                { "name": "MySQL", "level": 4 },
+                { "name": "MariaDB", "level": 4 },
+                { "name": "MongoDB", "level": 4 },
+                { "name": "Firebase", "level": 4 },
+                { "name": "Supabase", "level": 4 },
+                { "name": "SurrealDB", "level": 3 }
+            ]
+        },
+        {
+            "category": "DevOps & Deployment",
+            "technologies": [
+                { "name": "Docker", "level": 4 },
+                { "name": "Nginx", "level": 4 }
+            ]
         }
     ]
 }
