@@ -103,6 +103,12 @@ const App: React.FC = () => {
         returnObjects: true,
     }) as CareerTranslation[];
 
+    const sectionVariants = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1, transition: { duration: 0.6 } },
+        exit: { opacity: 0 },
+    };
+
     return (
         <div className={`min-h-screen ${isDark ? "dark" : ""}`}>
             <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
@@ -116,13 +122,15 @@ const App: React.FC = () => {
                 />
 
                 <main className="pt-16">
-                    {/* Intro Section */}
-                    <section
+                    <motion.section
                         ref={sectionRefs.intro}
-                        className="relative h-screen flex items-center justify-center overflow-hidden"
+                        className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 dark:from-gray-800"
+                        variants={sectionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
                     >
                         <SceneContainer />
-
                         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
                             <motion.h1
                                 className="text-5xl sm:text-7xl font-bold text-gray-900 dark:text-white mb-6"
@@ -141,12 +149,15 @@ const App: React.FC = () => {
                                 {t("description")}
                             </motion.p>
                         </div>
-                    </section>
+                    </motion.section>
 
-                    {/* Projects Sections */}
-                    <section
+                    <motion.section
                         ref={sectionRefs.ongoing}
                         className="py-24 px-4 bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-800"
+                        variants={sectionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
                     >
                         <div className="max-w-7xl mx-auto">
                             <motion.h2
@@ -168,11 +179,15 @@ const App: React.FC = () => {
                                 ))}
                             </div>
                         </div>
-                    </section>
+                    </motion.section>
 
-                    <section
+                    <motion.section
                         ref={sectionRefs.completed}
                         className="py-24 px-4 bg-gray-100 dark:bg-gray-800"
+                        variants={sectionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
                     >
                         <div className="max-w-7xl mx-auto">
                             <motion.h2
@@ -194,12 +209,15 @@ const App: React.FC = () => {
                                 ))}
                             </div>
                         </div>
-                    </section>
+                    </motion.section>
 
-                    {/* TechStacks Section */}
-                    <section
+                    <motion.section
                         ref={sectionRefs.skills}
                         className="relative min-h-screen py-24 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+                        variants={sectionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
                     >
                         <motion.h2
                             className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16"
@@ -209,14 +227,17 @@ const App: React.FC = () => {
                         >
                             {t("skills")}
                         </motion.h2>
+                        <TechStack categories={techStack} />
+                    </motion.section>
 
-                        <div className="absolute inset-0 pt-32">
-                            <TechStack categories={techStack} />
-                        </div>
-                    </section>
-
-                    {/* Career Section */}
-                    <section ref={sectionRefs.career} className="py-24 px-4">
+                    <motion.section
+                        ref={sectionRefs.career}
+                        className="py-24 px-4 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900"
+                        variants={sectionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                    >
                         <div className="max-w-7xl mx-auto">
                             <motion.h2
                                 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16"
@@ -236,11 +257,16 @@ const App: React.FC = () => {
                                 ))}
                             </TimelineContainer>
                         </div>
-                    </section>
-                </main>
+                    </motion.section>
 
-                    {/* LifeTime Section */}
-                    <section ref={sectionRefs.life} className="py-24 px-4">
+                    <motion.section
+                        ref={sectionRefs.life}
+                        className="py-24 px-4 bg-gray-200 dark:bg-gray-900"
+                        variants={sectionVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                    >
                         <div className="max-w-7xl mx-auto">
                             <motion.h2
                                 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white text-center mb-16"
@@ -260,9 +286,9 @@ const App: React.FC = () => {
                                 ))}
                             </TimelineContainer>
                         </div>
-                    </section>
+                    </motion.section>
+                </main>
 
-                {/* Modal */}
                 <AnimatePresence>
                     {selectedProject && (
                         <ProjectModal

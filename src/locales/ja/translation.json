@@ -25,9 +25,7 @@
         {
             "title": "bevy advanced decorum",
             "description": "Tauri-plugin-decorumからインスピレーションを受けた、Bevyエンジンのための高度にカスタマイズ可能なウィンドウ装飾プラグイン",
-            "details": [
-                "obj-c"
-            ],
+            "details": ["obj-c"],
             "technologies": ["rust", "obj-c"],
             "links": {
                 "github": "https://github.com/miniex/bevy_advanced_decorum"
@@ -57,16 +55,21 @@
             "title": "個人ポートフォリオサイト",
             "description": "ReactとViteを使用したポートフォリオサイト",
             "details": [],
-            "technologies": ["react", "vite", "scss", "tailwindcss", "framer-motion", "threejs"],
+            "technologies": [
+                "react",
+                "vite",
+                "scss",
+                "tailwindcss",
+                "framer-motion",
+                "threejs"
+            ],
             "links": {
                 "github": "https://github.com/miniex/miniex.info"
             }
         }
     ],
-    "careers": [
-    ],
-    "lifeEvents": [
-    ],
+    "careers": [],
+    "lifeEvents": [],
     "techStack": [
         {
             "category": "プログラミング言語",

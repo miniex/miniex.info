@@ -25,9 +25,7 @@
         {
             "title": "bevy advanced decorum",
             "description": "A highly customizable window decoration plugin for the Bevy engine, inspired by Tauri-plugin-decorum",
-            "details": [
-                "obj-c"
-            ],
+            "details": ["obj-c"],
             "technologies": ["rust", "obj-c"],
             "links": {
                 "github": "https://github.com/miniex/bevy_advanced_decorum"
@@ -57,16 +55,21 @@
             "title": "Personal Portfolio Site",
             "description": "Portfolio site using React and Vite",
             "details": [],
-            "technologies": ["react", "vite", "scss", "tailwindcss", "framer-motion", "threejs"],
+            "technologies": [
+                "react",
+                "vite",
+                "scss",
+                "tailwindcss",
+                "framer-motion",
+                "threejs"
+            ],
             "links": {
                 "github": "https://github.com/miniex/miniex.info"
             }
         }
     ],
-    "careers": [
-    ],
-    "lifeEvents": [
-    ],
+    "careers": [],
+    "lifeEvents": [],
     "techStack": [
         {
             "category": "Languages",

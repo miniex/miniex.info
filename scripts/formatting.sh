@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bunx prettier --ignore-path ./.prettierignore --write --config ./.prettierrc './**/*.(js|ts|tsx|json|scss)'
+pnpx prettier --ignore-path ./.prettierignore --write --config ./.prettierrc './**/*.(js|ts|tsx|json|scss)'

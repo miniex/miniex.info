@@ -18,7 +18,6 @@ const TechStack: React.FC<{ categories: TechStackCategory[] }> = ({
     }, []);
 
     const generateSmoothPath = () => {
-        // 더 부드러운 곡선 경로 생성
         const radius = 30; // 이동 반경 제한
         const points = Array.from({ length: 8 }, () => ({
             x: -radius + Math.random() * (radius * 2),
@@ -32,14 +31,14 @@ const TechStack: React.FC<{ categories: TechStackCategory[] }> = ({
     }
 
     return (
-        <div className="relative w-full h-full overflow-hidden">
+        <div className="relative w-full h-[60vh] overflow-hidden mx-auto max-w-7xl px-4">
             {allTechnologies.map((tech, index) => {
-                const randomX = Math.random() * 60 + 20; // 중앙에 더 밀집되도록 조정
+                const randomX = Math.random() * 60 + 20;
                 const randomY = Math.random() * 60 + 20;
                 const path = generateSmoothPath();
-                const duration = 40 + Math.random() * 20; // 더 긴 애니메이션 주기
-                const delay = -Math.random() * 40; // 더 다양한 시작 시점
-                
+                const duration = 40 + Math.random() * 20;
+                const delay = -Math.random() * 40;
+
                 return (
                     <motion.div
                         key={`${tech.name}-${index}`}
@@ -53,12 +52,18 @@ const TechStack: React.FC<{ categories: TechStackCategory[] }> = ({
                         animate={{
                             scale: 1,
                             opacity: 1,
-                            x: path.map(p => p.x),
-                            y: path.map(p => p.y),
+                            x: path.map((p) => p.x),
+                            y: path.map((p) => p.y),
                         }}
                         transition={{
-                            scale: { duration: 0.5, delay: Math.abs(delay) * 0.1 },
-                            opacity: { duration: 0.5, delay: Math.abs(delay) * 0.1 },
+                            scale: {
+                                duration: 0.5,
+                                delay: Math.abs(delay) * 0.1,
+                            },
+                            opacity: {
+                                duration: 0.5,
+                                delay: Math.abs(delay) * 0.1,
+                            },
                             x: {
                                 duration: duration,
                                 repeat: Infinity,
@@ -76,16 +81,17 @@ const TechStack: React.FC<{ categories: TechStackCategory[] }> = ({
                         }}
                         drag
                         dragMomentum={false}
-                        dragTransition={{ 
+                        dragTransition={{
                             bounceStiffness: 300,
-                            bounceDamping: 30 
+                            bounceDamping: 30,
                         }}
                         whileHover={{ scale: 1.3, zIndex: 10 }}
                     >
                         <div className="relative flex flex-col items-center gap-3 select-none">
                             <motion.div
                                 className={`w-16 h-16 flex items-center justify-center bg-white/90 dark:bg-gray-800/90 rounded-full shadow-lg hover:shadow-xl transition-all cursor-grab active:cursor-grabbing backdrop-blur-sm border border-gray-200 dark:border-gray-700 ${
-                                    techColors[tech.name] || "text-gray-600 dark:text-gray-400"
+                                    techColors[tech.name] ||
+                                    "text-gray-600 dark:text-gray-400"
                                 }`}
                                 whileHover={{
                                     rotate: 360,
@@ -94,10 +100,11 @@ const TechStack: React.FC<{ categories: TechStackCategory[] }> = ({
                                 }}
                             >
                                 <span className="text-2xl">
-                                    {techIcons[tech.name] || tech.name.charAt(0)}
+                                    {techIcons[tech.name] ||
+                                        tech.name.charAt(0)}
                                 </span>
                             </motion.div>
-                            <motion.div 
+                            <motion.div
                                 className="absolute top-20 px-3 py-1 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-md backdrop-blur-sm border border-gray-200 dark:border-gray-700"
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}

@@ -12,7 +12,14 @@ const Header: React.FC<{
 }> = ({ scrollToSection, currentSection, sectionRefs }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
-    const sections = ["intro", "ongoing", "completed", "skills", "career", "life"];
+    const sections = [
+        "intro",
+        "ongoing",
+        "completed",
+        "skills",
+        "career",
+        "life",
+    ];
 
     return (
         <motion.header

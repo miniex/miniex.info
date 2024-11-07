@@ -13,7 +13,7 @@
             "description": "학습 목적과 AI 엔진 구축을 위해 설계된, 'Maiden Engine'을 위한 Rust 기반 머신러닝 프레임워크",
             "details": [
                 "Rust를 사용한 성능과 효율에 초점을 둔 프레임워크",
-               "CUDA 지원",
+                "CUDA 지원",
                 "Vulkan & Metal, DirectX 지원 예정",
                 "pytorch와 유사한 구조"
             ],
@@ -25,9 +25,7 @@
         {
             "title": "bevy advanced decorum",
             "description": "Tauri-plugin-decorum에서 영감을 받은, Bevy 엔진을 위한 고도로 커스터마이징 가능한 윈도우 데코레이션 플러그인",
-            "details": [
-                "obj-c"
-            ],
+            "details": ["obj-c"],
             "technologies": ["rust", "obj-c"],
             "links": {
                 "github": "https://github.com/miniex/bevy_advanced_decorum"
@@ -36,8 +34,7 @@
         {
             "title": "bevy 오픈소스 기여",
             "description": "rust기반 오픈소스 게임엔진인 bevy 기여",
-            "details": [
-            ],
+            "details": [],
             "technologies": ["rust", "bevy"],
             "links": {
                 "github": "https://github.com/miniex/bevy"
@@ -58,16 +55,21 @@
             "title": "개인 포트폴리오 사이트",
             "description": "react와 vite를 이용한 포트폴리오 사이트",
             "details": [],
-            "technologies": ["react", "vite", "scss", "tailwindcss", "framer-motion", "threejs"],
+            "technologies": [
+                "react",
+                "vite",
+                "scss",
+                "tailwindcss",
+                "framer-motion",
+                "threejs"
+            ],
             "links": {
                 "github": "https://github.com/miniex/miniex.info"
             }
         }
     ],
-    "careers": [
-    ],
-    "lifeEvents": [
-    ],
+    "careers": [],
+    "lifeEvents": [],
     "techStack": [
         {
             "category": "Languages",
@@ -117,5 +119,4 @@
             ]
         }
     ]
-    
 }
