@@ -48,7 +48,8 @@
             "details": [],
             "technologies": ["rust", "css", "js", "html"],
             "links": {
-                "github": "https://github.com/miniex/miniex.blog"
+                "github": "https://github.com/miniex/miniex.blog",
+                "live": "https://miniex.blog"
             }
         },
         {
@@ -64,7 +65,8 @@
                 "threejs"
             ],
             "links": {
-                "github": "https://github.com/miniex/miniex.info"
+                "github": "https://github.com/miniex/miniex.info",
+                "live": "https://miniex.info"
             }
         }
     ],
