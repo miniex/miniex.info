@@ -9,7 +9,7 @@
     "description": "こんにちは、自由を追求する開発者のハン・ダミンです。",
     "ongoingProjects": [
         {
-            "title": "maidenX",
+            "title": "maidenX (old version)",
             "description": "学習目的とAIエンジン構築のために設計された、'Maiden Engine'のためのRustベースの機械学習フレームワーク",
             "details": [
                 "Rustを使用したパフォーマンスと効率性に焦点を当てたフレームワーク",

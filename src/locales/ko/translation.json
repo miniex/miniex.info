@@ -9,7 +9,7 @@
     "description": "안녕하세요, 자유를 추구하는 개발자 한다민입니다.",
     "ongoingProjects": [
         {
-            "title": "maidenX",
+            "title": "maidenX (old version)",
             "description": "학습 목적과 AI 엔진 구축을 위해 설계된, 'Maiden Engine'을 위한 Rust 기반 머신러닝 프레임워크",
             "details": [
                 "Rust를 사용한 성능과 효율에 초점을 둔 프레임워크",
