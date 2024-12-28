@@ -19,7 +19,7 @@
             ],
             "technologies": ["rust", "CUDA", "ML", "pytorch"],
             "links": {
-                "github": "https://github.com/miniex/maidenx"
+                "github": "https://github.com/miniex/maidenx-old"
             }
         },
         {
