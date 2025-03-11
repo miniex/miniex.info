@@ -9,6 +9,20 @@
     "description": "こんにちは、自由を追求する開発者のハン・ダミンです。",
     "ongoingProjects": [
         {
+            "title": "maidenX",
+            "description": "Maiden Engineプロジェクトの一環として開発されたRustベースの機械学習フレームワークです。MaidenXは教育的な焦点を当てて設計されており、MLフレームワークの実装に関する学習と理解を促進するためにPyTorchのアーキテクチャを反映する構造になっています。",
+            "details": [
+                "Rustを使用したパフォーマンスと効率性に焦点を当てたフレームワーク",
+                "CUDAサポート",
+                "Vulkan & Metal、DirectXサポート予定",
+                "pytorchと類似した構造"
+            ],
+            "technologies": ["rust", "machine-learning", "tensor"],
+            "links": {
+                "github": "https://github.com/miniex/maidenx"
+            }
+        },
+        {
             "title": "maidenX (old version)",
             "description": "学習目的とAIエンジン構築のために設計された、'Maiden Engine'のためのRustベースの機械学習フレームワーク",
             "details": [

@@ -9,6 +9,20 @@
     "description": "Hello, I'm Han Damin, a developer pursuing freedom.",
     "ongoingProjects": [
         {
+            "title": "maidenX",
+            "description": "A Rust-based machine learning framework developed as part of the Maiden Engine project. MaidenX is designed with an educational focus, structured to mirror PyTorch's architecture to facilitate learning and understanding of ML framework implementations.",
+            "details": [
+                "Framework focused on performance and efficiency using Rust",
+                "CUDA support",
+                "Vulkan & Metal, DirectX support planned",
+                "Similar structure to pytorch"
+            ],
+            "technologies": ["rust", "machine-learning", "tensor"],
+            "links": {
+                "github": "https://github.com/miniex/maidenx"
+            }
+        },
+        {
             "title": "maidenX (old version)",
             "description": "A Rust-based machine learning framework designed for learning purposes and AI engine construction, for 'Maiden Engine'",
             "details": [

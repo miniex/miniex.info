@@ -9,6 +9,20 @@
     "description": "안녕하세요, 자유를 추구하는 개발자 한다민입니다.",
     "ongoingProjects": [
         {
+            "title": "maidenX",
+            "description": "Maiden Engine 프로젝트의 일환으로 개발된 Rust 기반 머신러닝 프레임워크입니다. MaidenX는 교육적 초점을 두고 설계되었으며, ML 프레임워크 구현에 대한 학습과 이해를 촉진하기 위해 PyTorch의 아키텍처를 반영하는 구조를 가지고 있습니다.",
+            "details": [
+                "Rust를 사용한 성능과 효율에 초점을 둔 프레임워크",
+                "CUDA 지원",
+                "Vulkan & Metal, DirectX 지원 예정",
+                "pytorch와 유사한 구조"
+            ],
+            "technologies": ["rust", "machine-learning", "tensor"],
+            "links": {
+                "github": "https://github.com/miniex/maidenx"
+            }
+        },
+        {
             "title": "maidenX (old version)",
             "description": "학습 목적과 AI 엔진 구축을 위해 설계된, 'Maiden Engine'을 위한 Rust 기반 머신러닝 프레임워크",
             "details": [
