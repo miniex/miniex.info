@@ -7,8 +7,14 @@ export interface ProjectTranslation {
         github?: string;
         live?: string;
         address?: string;
+        documentation?: string;
     };
     image?: string;
+    status?: string;
+    year?: string;
+    duration?: string;
+    category?: string;
+    challenges?: string;
 }
 
 export interface CareerTranslation {
@@ -49,10 +55,14 @@ export interface LifeEventTranslation {
 
 export interface TechStackCategory {
     category: string;
+    order?: number;
     technologies: {
         name: string;
-        level: number;
+        level?: number;
         icon?: string;
+        related?: string[];
+        x?: number;
+        y?: number;
     }[];
 }
 

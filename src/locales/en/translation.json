@@ -17,11 +17,43 @@
                 "Vulkan & Metal, DirectX support planned",
                 "Similar structure to pytorch"
             ],
-            "technologies": ["rust", "machine-learning", "tensor"],
+            "technologies": [
+                "rust",
+                "machine-learning",
+                "tensor"
+            ],
             "links": {
                 "github": "https://github.com/miniex/maidenx"
             }
         },
+        {
+            "title": "bevy advanced decorum",
+            "description": "A highly customizable window decoration plugin for the Bevy engine, inspired by Tauri-plugin-decorum",
+            "details": [
+                "obj-c"
+            ],
+            "technologies": [
+                "rust",
+                "obj-c"
+            ],
+            "links": {
+                "github": "https://github.com/miniex/bevy_advanced_decorum"
+            }
+        },
+        {
+            "title": "bevy open source contributions",
+            "description": "Contributions to bevy, a Rust-based open source game engine",
+            "details": [],
+            "technologies": [
+                "rust",
+                "bevy"
+            ],
+            "links": {
+                "github": "https://github.com/miniex/bevy"
+            }
+        }
+    ],
+    "completedProjects": [
         {
             "title": "maidenX (old version)",
             "description": "A Rust-based machine learning framework designed for learning purposes and AI engine construction, for 'Maiden Engine'",
@@ -31,36 +63,26 @@
                 "Vulkan & Metal, DirectX support planned",
                 "Similar structure to pytorch"
             ],
-            "technologies": ["rust", "CUDA", "ML", "pytorch"],
+            "technologies": [
+                "rust",
+                "CUDA",
+                "ML",
+                "pytorch"
+            ],
             "links": {
                 "github": "https://github.com/miniex/maidenx-old"
             }
         },
         {
-            "title": "bevy advanced decorum",
-            "description": "A highly customizable window decoration plugin for the Bevy engine, inspired by Tauri-plugin-decorum",
-            "details": ["obj-c"],
-            "technologies": ["rust", "obj-c"],
-            "links": {
-                "github": "https://github.com/miniex/bevy_advanced_decorum"
-            }
-        },
-        {
-            "title": "bevy open source contributions",
-            "description": "Contributions to bevy, a Rust-based open source game engine",
-            "details": [],
-            "technologies": ["rust", "bevy"],
-            "links": {
-                "github": "https://github.com/miniex/bevy"
-            }
-        }
-    ],
-    "completedProjects": [
-        {
             "title": "Personal Blog",
             "description": "Static blog using Rust and HTML",
             "details": [],
-            "technologies": ["rust", "css", "js", "html"],
+            "technologies": [
+                "rust",
+                "css",
+                "js",
+                "html"
+            ],
             "links": {
                 "github": "https://github.com/miniex/miniex.blog",
                 "live": "https://miniex.blog"
@@ -90,48 +112,129 @@
         {
             "category": "Languages",
             "technologies": [
-                { "name": "C", "level": 4 },
-                { "name": "C++", "level": 4 },
-                { "name": "JavaScript", "level": 5 },
-                { "name": "TypeScript", "level": 5 },
-                { "name": "Python", "level": 4 },
-                { "name": "Rust", "level": 4 },
-                { "name": "CUDA", "level": 3 }
+                {
+                    "name": "C",
+                    "level": 4
+                },
+                {
+                    "name": "C++",
+                    "level": 4
+                },
+                {
+                    "name": "JavaScript",
+                    "level": 5
+                },
+                {
+                    "name": "TypeScript",
+                    "level": 5
+                },
+                {
+                    "name": "Python",
+                    "level": 4
+                },
+                {
+                    "name": "Rust",
+                    "level": 4
+                },
+                {
+                    "name": "CUDA",
+                    "level": 3
+                }
             ]
         },
         {
             "category": "Tools & Frameworks",
             "technologies": [
-                { "name": "NPM", "level": 4 },
-                { "name": "Yarn", "level": 4 },
-                { "name": "PNPM", "level": 4 },
-                { "name": "Bun", "level": 3 },
-                { "name": "Svelte", "level": 4 },
-                { "name": "Vite", "level": 4 },
-                { "name": "React", "level": 5 },
-                { "name": "Next.js", "level": 5 },
-                { "name": "Tauri", "level": 4 },
-                { "name": "Git", "level": 4 },
-                { "name": "TailwindCSS", "level": 5 },
-                { "name": "SASS", "level": 4 }
+                {
+                    "name": "NPM",
+                    "level": 4
+                },
+                {
+                    "name": "Yarn",
+                    "level": 4
+                },
+                {
+                    "name": "PNPM",
+                    "level": 4
+                },
+                {
+                    "name": "Bun",
+                    "level": 3
+                },
+                {
+                    "name": "Svelte",
+                    "level": 4
+                },
+                {
+                    "name": "Vite",
+                    "level": 4
+                },
+                {
+                    "name": "React",
+                    "level": 5
+                },
+                {
+                    "name": "Next.js",
+                    "level": 5
+                },
+                {
+                    "name": "Tauri",
+                    "level": 4
+                },
+                {
+                    "name": "Git",
+                    "level": 4
+                },
+                {
+                    "name": "TailwindCSS",
+                    "level": 5
+                },
+                {
+                    "name": "SASS",
+                    "level": 4
+                }
             ]
         },
         {
             "category": "Databases",
             "technologies": [
-                { "name": "MySQL", "level": 4 },
-                { "name": "MariaDB", "level": 4 },
-                { "name": "MongoDB", "level": 4 },
-                { "name": "Firebase", "level": 4 },
-                { "name": "Supabase", "level": 4 },
-                { "name": "SurrealDB", "level": 3 }
+                {
+                    "name": "MySQL",
+                    "level": 4
+                },
+                {
+                    "name": "MariaDB",
+                    "level": 4
+                },
+                {
+                    "name": "MongoDB",
+                    "level": 4
+                },
+                {
+                    "name": "Firebase",
+                    "level": 4
+                },
+                {
+                    "name": "Supabase",
+                    "level": 4
+                },
+                {
+                    "name": "SurrealDB",
+                    "level": 3
+                }
             ]
         },
         {
             "category": "DevOps & Deployment",
             "technologies": [
-                { "name": "Docker", "level": 4 },
-                { "name": "Nginx", "level": 4 }
+                {
+                    "name": "Docker",
+                    "level": 4
+                },
+                {
+                    "name": "Nginx",
+                    "level": 4
+                }
             ]
         }
     ]

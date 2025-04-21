@@ -1,128 +1,161 @@
 import { TechStackCategory } from "@/types/data";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import React from "react";
 
 const TechStack: React.FC<{ categories: TechStackCategory[] }> = ({
     categories,
 }) => {
     const [mounted, setMounted] = useState(false);
-    const allTechnologies = categories.flatMap((category) =>
-        category.technologies.map((tech) => ({
-            ...tech,
-            category: category.category,
-        })),
-    );
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+    const sortedCategories = [...categories].sort((a, b) => (a.order || 99) - (b.order || 99));
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    const generateSmoothPath = () => {
-        const radius = 30; // 이동 반경 제한
-        const points = Array.from({ length: 8 }, () => ({
-            x: -radius + Math.random() * (radius * 2),
-            y: -radius + Math.random() * (radius * 2),
-        }));
-        return points;
+    const handleCategoryClick = (category: string) => {
+        setActiveCategory(activeCategory === category ? null : category);
     };
 
     if (!mounted) {
-        return null; // 초기 렌더링 시 깜빡임 방지
+        return null; // Prevent flash on initial render
     }
 
     return (
-        <div className="relative w-full h-[60vh] overflow-hidden mx-auto max-w-7xl px-4">
-            {allTechnologies.map((tech, index) => {
-                const randomX = Math.random() * 60 + 20;
-                const randomY = Math.random() * 60 + 20;
-                const path = generateSmoothPath();
-                const duration = 40 + Math.random() * 20;
-                const delay = -Math.random() * 40;
-
-                return (
-                    <motion.div
-                        key={`${tech.name}-${index}`}
-                        className="absolute"
-                        initial={{
-                            left: `${randomX}%`,
-                            top: `${randomY}%`,
-                            scale: 0,
-                            opacity: 0,
-                        }}
+        <div className="mx-auto max-w-7xl px-4">
+            {/* Category filters */}
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
+                {sortedCategories.map((category) => (
+                    <motion.button
+                        key={category.category}
+                        onClick={() => handleCategoryClick(category.category)}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border 
+                            ${activeCategory === category.category
+                                ? "bg-primary-500 text-white border-primary-600 shadow-md"
+                                : "bg-white/80 dark:bg-secondary-800/80 text-secondary-700 dark:text-secondary-300 border-secondary-200 dark:border-secondary-700 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400"
+                            }
+                        `}
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                         animate={{
-                            scale: 1,
-                            opacity: 1,
-                            x: path.map((p) => p.x),
-                            y: path.map((p) => p.y),
+                            scale: activeCategory === category.category ? 1.05 : 1
                         }}
-                        transition={{
-                            scale: {
-                                duration: 0.5,
-                                delay: Math.abs(delay) * 0.1,
-                            },
-                            opacity: {
-                                duration: 0.5,
-                                delay: Math.abs(delay) * 0.1,
-                            },
-                            x: {
-                                duration: duration,
-                                repeat: Infinity,
-                                repeatType: "reverse",
-                                ease: "easeInOut",
-                                delay: delay,
-                            },
-                            y: {
-                                duration: duration,
-                                repeat: Infinity,
-                                repeatType: "reverse",
-                                ease: "easeInOut",
-                                delay: delay,
-                            },
-                        }}
-                        drag
-                        dragMomentum={false}
-                        dragTransition={{
-                            bounceStiffness: 300,
-                            bounceDamping: 30,
-                        }}
-                        whileHover={{ scale: 1.3, zIndex: 10 }}
                     >
-                        <div className="relative flex flex-col items-center gap-3 select-none">
-                            <motion.div
-                                className={`w-16 h-16 flex items-center justify-center bg-white/90 dark:bg-gray-800/90 rounded-full shadow-lg hover:shadow-xl transition-all cursor-grab active:cursor-grabbing backdrop-blur-sm border border-gray-200 dark:border-gray-700 ${
-                                    techColors[tech.name] ||
-                                    "text-gray-600 dark:text-gray-400"
-                                }`}
-                                whileHover={{
-                                    rotate: 360,
-                                    scale: 1.2,
-                                    transition: { duration: 0.8 },
-                                }}
-                            >
-                                <span className="text-2xl">
-                                    {techIcons[tech.name] ||
-                                        tech.name.charAt(0)}
-                                </span>
-                            </motion.div>
-                            <motion.div
-                                className="absolute top-20 px-3 py-1 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-md backdrop-blur-sm border border-gray-200 dark:border-gray-700"
-                                initial={{ opacity: 0, y: -10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: Math.abs(delay) * 0.1 }}
-                            >
-                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
-                                    {tech.name}
-                                </span>
-                            </motion.div>
-                        </div>
-                    </motion.div>
-                );
-            })}
+                        {category.category}
+                    </motion.button>
+                ))}
+                {activeCategory && (
+                    <motion.button
+                        onClick={() => setActiveCategory(null)}
+                        className="px-4 py-2 rounded-full text-sm font-medium bg-secondary-200 dark:bg-secondary-700 text-secondary-700 dark:text-secondary-300 border border-secondary-300 dark:border-secondary-600 hover:bg-secondary-300 dark:hover:bg-secondary-600 transition-all duration-300"
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                    >
+                        Show All
+                    </motion.button>
+                )}
+            </div>
+
+            {/* Tech grid display */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 bg-white/70 dark:bg-secondary-800/70 backdrop-blur-md rounded-2xl border border-secondary-200/50 dark:border-secondary-700/50 shadow-soft p-6 sm:p-8">
+                {sortedCategories.map((category) => {
+                    // Only show this category if no category is selected or this is the selected category
+                    if (activeCategory && category.category !== activeCategory) {
+                        return null;
+                    }
+
+                    return (
+                        <React.Fragment key={category.category}>
+                            {/* Category heading - only show if all categories are visible */}
+                            {!activeCategory && (
+                                <motion.div
+                                    className="col-span-full my-4 first:mt-0"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.1 }}
+                                >
+                                    <h3 className="text-lg font-semibold text-secondary-900 dark:text-white border-b border-secondary-200 dark:border-secondary-700/50 pb-2 mb-4 flex items-center gap-2">
+                                        <span className="w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400 inline-block"></span>
+                                        {category.category}
+                                    </h3>
+                                </motion.div>
+                            )}
+
+                            {/* Technology items */}
+                            {category.technologies.map((tech, techIndex) => (
+                                <motion.div
+                                    key={`${category.category}-${tech.name}`}
+                                    className="feature-card h-full p-0 overflow-hidden hover-lift"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: techIndex * 0.05 }}
+                                    whileHover={{ scale: 1.03 }}
+                                >
+                                    <div className="p-5">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            {/* Tech icon */}
+                                            <div className="w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 shadow-sm border border-primary-100 dark:border-primary-800/60">
+                                                <span className="text-xl">
+                                                    {techIcons[tech.name] || tech.name.charAt(0)}
+                                                </span>
+                                            </div>
+
+                                            {/* Tech name */}
+                                            <h4 className="text-base font-semibold text-secondary-900 dark:text-white leading-snug">
+                                                {tech.name}
+                                            </h4>
+                                        </div>
+
+                                        {/* Skill level indicator */}
+                                        {tech.level && (
+                                            <div className="mt-3 mb-1">
+                                                <div className="flex justify-between text-xs mb-1">
+                                                    <span className="text-secondary-500 dark:text-secondary-400">Proficiency</span>
+                                                    <span className="font-medium text-primary-600 dark:text-primary-400">{tech.level}/10</span>
+                                                </div>
+                                                <div className="h-1.5 w-full bg-secondary-100 dark:bg-secondary-700/60 rounded-full overflow-hidden">
+                                                    <motion.div
+                                                        className={`h-full ${tech.level >= 8
+                                                            ? "bg-primary-500 dark:bg-primary-400"
+                                                            : tech.level >= 5
+                                                                ? "bg-accent-teal"
+                                                                : "bg-accent-amber"
+                                                            }`}
+                                                        initial={{ width: 0 }}
+                                                        animate={{ width: `${tech.level * 10}%` }}
+                                                        transition={{ duration: 0.5, delay: 0.2 }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Related technologies tags */}
+                                        {tech.related && tech.related.length > 0 && (
+                                            <div className="mt-3 flex flex-wrap gap-1.5">
+                                                {tech.related.map((related, i) => (
+                                                    <span
+                                                        key={i}
+                                                        className="text-xs py-0.5 px-1.5 bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 rounded"
+                                                    >
+                                                        {related}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </React.Fragment>
+                    );
+                })}
+            </div>
         </div>
     );
 };
-
-export default TechStack;
 
 import {
     SiReact,
@@ -158,44 +191,10 @@ import {
     SiNginx,
 } from "react-icons/si";
 
-const techColors: { [key: string]: { bg: string; text: string } } = {
-    React: { bg: "bg-[#2320232a]", text: "text-[#61DAFB]" },
-    TypeScript: { bg: "bg-[#007ACC]", text: "text-white" },
-    "Next.js": { bg: "bg-black", text: "text-white" },
-    Rust: { bg: "bg-black", text: "text-white" },
-    "Node.js": { bg: "bg-[#339933]", text: "text-white" },
-    PostgreSQL: { bg: "bg-[#4169E1]", text: "text-white" },
-    WebAssembly: { bg: "bg-[#654FF0]", text: "text-white" },
-    Docker: { bg: "bg-[#2496ED]", text: "text-white" },
-    "GitHub Actions": { bg: "bg-[#2088FF]", text: "text-white" },
-    C: { bg: "bg-[#00599C]", text: "text-white" },
-    "C++": { bg: "bg-[#00599C]", text: "text-white" },
-    JavaScript: { bg: "bg-[#F7DF1E]", text: "text-[#323330]" },
-    Python: { bg: "bg-[#3670A0]", text: "text-[#FFDD54]" },
-    CUDA: { bg: "bg-black", text: "text-[#76B900]" },
-    NPM: { bg: "bg-[#CB3837]", text: "text-white" },
-    Yarn: { bg: "bg-[#2C8EBB]", text: "text-white" },
-    PNPM: { bg: "bg-[#4a4a4a]", text: "text-[#f69220]" },
-    Bun: { bg: "bg-black", text: "text-white" },
-    Svelte: { bg: "bg-[#f1413d]", text: "text-white" },
-    Vite: { bg: "bg-[#646CFF]", text: "text-white" },
-    Tauri: { bg: "bg-[#24C8DB]", text: "text-white" },
-    Git: { bg: "bg-[#F05033]", text: "text-white" },
-    TailwindCSS: { bg: "bg-[#38B2AC]", text: "text-white" },
-    SASS: { bg: "bg-[#CC6699]", text: "text-white" },
-    MySQL: { bg: "bg-[#4479A1]", text: "text-white" },
-    MariaDB: { bg: "bg-[#003545]", text: "text-white" },
-    MongoDB: { bg: "bg-[#47A248]", text: "text-white" },
-    Firebase: { bg: "bg-[#FFCA28]", text: "text-[#323330]" },
-    Supabase: { bg: "bg-[#3ECF8E]", text: "text-white" },
-    SurrealDB: { bg: "bg-[#FF00A0]", text: "text-white" },
-    Nginx: { bg: "bg-[#009639]", text: "text-white" },
-};
-
 const techIcons: { [key: string]: JSX.Element } = {
     React: <SiReact className="text-[#61DAFB]" />,
     TypeScript: <SiTypescript className="text-[#007ACC]" />,
-    "Next.js": <SiNextdotjs className="text-white" />,
+    "Next.js": <SiNextdotjs className="text-white dark:text-white" />,
     Rust: <SiRust className="text-[#FF4A00]" />,
     "Node.js": <SiNodedotjs className="text-[#339933]" />,
     PostgreSQL: <SiPostgresql className="text-[#4169E1]" />,
@@ -210,7 +209,7 @@ const techIcons: { [key: string]: JSX.Element } = {
     NPM: <SiNpm className="text-[#CB3837]" />,
     Yarn: <SiYarn className="text-[#2C8EBB]" />,
     PNPM: <SiPnpm className="text-[#f69220]" />,
-    Bun: <SiBun className="text-white" />,
+    Bun: <SiBun className="text-black dark:text-white" />,
     Svelte: <SiSvelte className="text-[#FF3E00]" />,
     Vite: <SiVite className="text-[#646CFF]" />,
     Tauri: <SiTauri className="text-[#FFC131]" />,
@@ -225,3 +224,5 @@ const techIcons: { [key: string]: JSX.Element } = {
     SurrealDB: <SiSurrealdb className="text-[#FF00A0]" />,
     Nginx: <SiNginx className="text-[#009639]" />,
 };
+
+export default TechStack;

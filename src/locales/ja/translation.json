@@ -17,11 +17,43 @@
                 "Vulkan & Metal、DirectXサポート予定",
                 "pytorchと類似した構造"
             ],
-            "technologies": ["rust", "machine-learning", "tensor"],
+            "technologies": [
+                "rust",
+                "machine-learning",
+                "tensor"
+            ],
             "links": {
                 "github": "https://github.com/miniex/maidenx"
             }
         },
+        {
+            "title": "bevy advanced decorum",
+            "description": "Tauri-plugin-decorumからインスピレーションを受けた、Bevyエンジンのための高度にカスタマイズ可能なウィンドウ装飾プラグイン",
+            "details": [
+                "obj-c"
+            ],
+            "technologies": [
+                "rust",
+                "obj-c"
+            ],
+            "links": {
+                "github": "https://github.com/miniex/bevy_advanced_decorum"
+            }
+        },
+        {
+            "title": "bevyオープンソース貢献",
+            "description": "Rustベースのオープンソースゲームエンジンbevyへの貢献",
+            "details": [],
+            "technologies": [
+                "rust",
+                "bevy"
+            ],
+            "links": {
+                "github": "https://github.com/miniex/bevy"
+            }
+        }
+    ],
+    "completedProjects": [
         {
             "title": "maidenX (old version)",
             "description": "学習目的とAIエンジン構築のために設計された、'Maiden Engine'のためのRustベースの機械学習フレームワーク",
@@ -31,36 +63,26 @@
                 "Vulkan & Metal、DirectXサポート予定",
                 "pytorchと類似した構造"
             ],
-            "technologies": ["rust", "CUDA", "ML", "pytorch"],
+            "technologies": [
+                "rust",
+                "CUDA",
+                "ML",
+                "pytorch"
+            ],
             "links": {
                 "github": "https://github.com/miniex/maidenx-old"
             }
         },
         {
-            "title": "bevy advanced decorum",
-            "description": "Tauri-plugin-decorumからインスピレーションを受けた、Bevyエンジンのための高度にカスタマイズ可能なウィンドウ装飾プラグイン",
-            "details": ["obj-c"],
-            "technologies": ["rust", "obj-c"],
-            "links": {
-                "github": "https://github.com/miniex/bevy_advanced_decorum"
-            }
-        },
-        {
-            "title": "bevyオープンソース貢献",
-            "description": "Rustベースのオープンソースゲームエンジンbevyへの貢献",
-            "details": [],
-            "technologies": ["rust", "bevy"],
-            "links": {
-                "github": "https://github.com/miniex/bevy"
-            }
-        }
-    ],
-    "completedProjects": [
-        {
             "title": "個人ブログ",
             "description": "RustとHTMLを使用した静的ブログ",
             "details": [],
-            "technologies": ["rust", "css", "js", "html"],
+            "technologies": [
+                "rust",
+                "css",
+                "js",
+                "html"
+            ],
             "links": {
                 "github": "https://github.com/miniex/miniex.blog",
                 "live": "https://miniex.blog"
@@ -90,48 +112,129 @@
         {
             "category": "プログラミング言語",
             "technologies": [
-                { "name": "C", "level": 4 },
-                { "name": "C++", "level": 4 },
-                { "name": "JavaScript", "level": 5 },
-                { "name": "TypeScript", "level": 5 },
-                { "name": "Python", "level": 4 },
-                { "name": "Rust", "level": 4 },
-                { "name": "CUDA", "level": 3 }
+                {
+                    "name": "C",
+                    "level": 4
+                },
+                {
+                    "name": "C++",
+                    "level": 4
+                },
+                {
+                    "name": "JavaScript",
+                    "level": 5
+                },
+                {
+                    "name": "TypeScript",
+                    "level": 5
+                },
+                {
+                    "name": "Python",
+                    "level": 4
+                },
+                {
+                    "name": "Rust",
+                    "level": 4
+                },
+                {
+                    "name": "CUDA",
+                    "level": 3
+                }
             ]
         },
         {
             "category": "ツール＆フレームワーク",
             "technologies": [
-                { "name": "NPM", "level": 4 },
-                { "name": "Yarn", "level": 4 },
-                { "name": "PNPM", "level": 4 },
-                { "name": "Bun", "level": 3 },
-                { "name": "Svelte", "level": 4 },
-                { "name": "Vite", "level": 4 },
-                { "name": "React", "level": 5 },
-                { "name": "Next.js", "level": 5 },
-                { "name": "Tauri", "level": 4 },
-                { "name": "Git", "level": 4 },
-                { "name": "TailwindCSS", "level": 5 },
-                { "name": "SASS", "level": 4 }
+                {
+                    "name": "NPM",
+                    "level": 4
+                },
+                {
+                    "name": "Yarn",
+                    "level": 4
+                },
+                {
+                    "name": "PNPM",
+                    "level": 4
+                },
+                {
+                    "name": "Bun",
+                    "level": 3
+                },
+                {
+                    "name": "Svelte",
+                    "level": 4
+                },
+                {
+                    "name": "Vite",
+                    "level": 4
+                },
+                {
+                    "name": "React",
+                    "level": 5
+                },
+                {
+                    "name": "Next.js",
+                    "level": 5
+                },
+                {
+                    "name": "Tauri",
+                    "level": 4
+                },
+                {
+                    "name": "Git",
+                    "level": 4
+                },
+                {
+                    "name": "TailwindCSS",
+                    "level": 5
+                },
+                {
+                    "name": "SASS",
+                    "level": 4
+                }
             ]
         },
         {
             "category": "データベース",
             "technologies": [
-                { "name": "MySQL", "level": 4 },
-                { "name": "MariaDB", "level": 4 },
-                { "name": "MongoDB", "level": 4 },
-                { "name": "Firebase", "level": 4 },
-                { "name": "Supabase", "level": 4 },
-                { "name": "SurrealDB", "level": 3 }
+                {
+                    "name": "MySQL",
+                    "level": 4
+                },
+                {
+                    "name": "MariaDB",
+                    "level": 4
+                },
+                {
+                    "name": "MongoDB",
+                    "level": 4
+                },
+                {
+                    "name": "Firebase",
+                    "level": 4
+                },
+                {
+                    "name": "Supabase",
+                    "level": 4
+                },
+                {
+                    "name": "SurrealDB",
+                    "level": 3
+                }
             ]
         },
         {
             "category": "DevOps＆デプロイメント",
             "technologies": [
-                { "name": "Docker", "level": 4 },
-                { "name": "Nginx", "level": 4 }
+                {
+                    "name": "Docker",
+                    "level": 4
+                },
+                {
+                    "name": "Nginx",
+                    "level": 4
+                }
             ]
         }
     ]
